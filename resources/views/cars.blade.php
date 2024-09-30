@@ -5,7 +5,7 @@
     <div class="row">
         @foreach ($cars as $car )
         <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
                 <img src="{{ $car['image'] }}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">{{ $car['title'] }}</h5>
