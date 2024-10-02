@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <x-nav></x-nav>
-        <x-header></x-header>
+        <x-header :title="$title"></x-header>
 
         {{ $slot }}
     </div>
