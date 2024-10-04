@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 Route::get('/cars', [carController::class, 'showCars']);
 Route::post('/cars/search-by-class', [carController::class, 'searchByClass']);
+Route::post('/cars/search-by-name', [carController::class, 'searchByName']);

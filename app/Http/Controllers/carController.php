@@ -49,4 +49,16 @@ class carController extends Controller
         return view('cars', ['cars' => $filteredCars, 'classes' => $this->classes]);
 
     }
+
+    function searchByName(Request $request){
+        $filteredCars = [];
+
+        foreach($this->cars as $car){
+            if(strpos($car["title"], $request->name) !== false){
+                $filteredCars[] = $car;
+            }
+        }
+
+        return view('cars', ['cars' => $filteredCars, 'classes' => $this->classes]);
+    }
 }
