@@ -26,11 +26,27 @@ class carController extends Controller
             }
         }
         sort($this->classes);
-        dd($this->classes);
     }
 
     function showCars(){
 
-        return view('cars', ['cars' => $this->cars]);
+        return view('cars', ['cars' => $this->cars, 'classes' => $this->classes]);
+    }
+
+    function searchByClass(Request $request){
+        // dd($request->all());
+
+        $filteredCars = [];
+
+        foreach ($this->cars as $car){
+            if (isset($car["class"]) and $car["class"] == $request->class){
+                $filteredCars[] = $car;
+            }
+        }
+
+        // dd($filteredCars);
+
+        return view('cars', ['cars' => $filteredCars, 'classes' => $this->classes]);
+
     }
 }
